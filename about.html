@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Sharma Dental Care Mumbai</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .mission-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:40px; }
+    .mission-card { background:var(--light); border-radius:var(--radius); padding:36px; border-top:4px solid var(--blue); }
+    .mission-card h3 { color:var(--navy); margin-bottom:12px; }
+    .achieve-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:40px; }
+    .achieve-item { text-align:center; padding:36px 20px; background:var(--white); border-radius:var(--radius); border:1px solid var(--border); }
+    .achieve-item strong { display:block; font-family:'Playfair Display',serif; font-size:2.4rem; color:var(--blue); margin-bottom:8px; }
+    .team-img-wrap { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .team-img-wrap img { border-radius:14px; height:280px; object-fit:cover; object-position:top; }
+    @media(max-width:768px){ .mission-grid,.achieve-grid,.team-img-wrap{ grid-template-columns:1fr; } }
+    @media(max-width:992px){ .achieve-grid{ grid-template-columns:1fr 1fr; } }
+  </style>
+</head>
+<body>
+<!-- NOTICE BAR -->
+<div class="notice-bar">📞 Emergency Dental Care Available 24/7 — Call <a href="tel:+919820012345">+91 98200 12345</a><span>|</span>🦷 Free Consultation for First Visit — <a href="appointment.html">Book Now</a></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">🦷</div>
+      <div class="logo-text"><strong>Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html" class="active">About</a><a href="services.html">Services</a>
+      <a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a>
+    </div>
+    <a href="appointment.html" class="btn btn-primary nav-cta">Book Appointment</a>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a>
+  <a href="contact.html">Contact</a>
+  <a href="appointment.html" class="btn btn-primary" style="margin-top:12px;text-align:center;">Book Appointment</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">About Us</span></div>
+    <h1>About Sharma Dental Care</h1>
+    <p>18 years of excellence in dental healthcare. Discover our story, our values, and our commitment to your smile.</p>
+  </div>
+</section>
+
+<!-- CLINIC STORY -->
+<section class="section-pad">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start;">
+      <div>
+        <span class="sec-label">Our Story</span>
+        <h2 class="sec-title">A Journey Built on <span>Trust & Care</span></h2>
+        <p>Sharma Dental Care was founded in 2006 by Dr. Rahul Sharma, a young but passionate dentist who had just completed his Masters in Oral Surgery from KEM Hospital, Mumbai. Dr. Sharma had one dream: to create a dental clinic that would make quality oral healthcare accessible to every family in Mumbai — without compromise on standards, ethics, or warmth.</p>
+        <p style="margin-top:16px;">Starting with a modest two-chair setup in Andheri West, the clinic quickly earned a reputation for exceptional results and patient-centric care. Word spread through the neighbourhood, and within three years, Sharma Dental Care had expanded to a fully equipped six-chair dental facility — one of the most advanced in the western suburbs of Mumbai.</p>
+        <p style="margin-top:16px;">Today, with a team of 12 specialists, state-of-the-art equipment, and over 15,000 happy patients, Sharma Dental Care stands as a beacon of dental excellence in Mumbai. Our journey has been defined not by accolades — though we've won many — but by the thousands of smiles we've transformed and the trust families have placed in us year after year.</p>
+        <p style="margin-top:16px;">We have invested heavily in the latest dental technologies including 3D cone beam CT scanning, digital impressions (iTero scanner), same-day CAD/CAM crowns, laser gum therapy, and painless computer-controlled anaesthesia delivery. But technology alone doesn't make great dentistry — it's the human touch, the empathy, and the genuine care that sets our team apart.</p>
+        <p style="margin-top:16px;">As we look towards the future, our commitment remains unchanged: to serve our patients with the highest standards of clinical excellence, to treat every patient like family, and to continue earning the trust of Mumbai, one smile at a time.</p>
+      </div>
+      <div class="team-img-wrap">
+        <img src="pexels-oys-photography-838143052-19438561.jpg" alt="Dr. Rahul Sharma" />
+        <img src="pexels-oys-photography-838143052-19438563.jpg" alt="Clinic Team" />
+        <img src="male-working-as-paediatrician.jpg" alt="Medical Team" style="grid-column:1/-1;height:220px;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="section-pad" style="background:var(--light);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:10px;">
+      <span class="sec-label">Mission & Vision</span>
+      <h2 class="sec-title">What <span>Drives Us</span></h2>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div style="font-size:2.5rem;margin-bottom:16px;">🎯</div>
+        <h3>Our Mission</h3>
+        <p>To deliver exceptional, patient-centred dental care using the latest technology and evidence-based practices. We are committed to making dental health accessible, affordable, and anxiety-free for every individual and family in Mumbai. We believe every person deserves a healthy, confident smile regardless of their background or budget.</p>
+      </div>
+      <div class="mission-card">
+        <div style="font-size:2.5rem;margin-bottom:16px;">🔭</div>
+        <h3>Our Vision</h3>
+        <p>To be Mumbai's most trusted and respected dental practice — a clinic where patients feel valued, informed, and cared for at every step of their dental journey. We envision a future where preventive dentistry becomes a cultural norm, and where our clinic serves as a model of clinical excellence and ethical practice for the entire country.</p>
+      </div>
+      <div class="mission-card">
+        <div style="font-size:2.5rem;margin-bottom:16px;">💎</div>
+        <h3>Our Values</h3>
+        <p><strong>Integrity:</strong> Honest diagnosis, transparent pricing, no unnecessary procedures.<br><br><strong>Excellence:</strong> Continuous learning, latest techniques, highest clinical standards.<br><br><strong>Compassion:</strong> Treating patients with empathy, patience, and genuine care.<br><br><strong>Innovation:</strong> Embracing technology to improve outcomes and comfort.</p>
+      </div>
+      <div class="mission-card">
+        <div style="font-size:2.5rem;margin-bottom:16px;">🏆</div>
+        <h3>Our Promise</h3>
+        <p>We promise to never recommend a treatment you don't need. We promise to explain every procedure clearly and answer all your questions. We promise to maintain the highest standards of hygiene and safety. And most importantly, we promise to treat you the way we'd want our own family to be treated — with respect, warmth, and world-class expertise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:10px;">
+      <span class="sec-label">Our Achievements</span>
+      <h2 class="sec-title">Numbers That <span>Speak</span></h2>
+    </div>
+    <div class="achieve-grid">
+      <div class="achieve-item">
+        <strong>15,000+</strong>
+        <p>Happy patients treated since 2006</p>
+      </div>
+      <div class="achieve-item">
+        <strong>18+</strong>
+        <p>Years of clinical excellence in Mumbai</p>
+      </div>
+      <div class="achieve-item">
+        <strong>12</strong>
+        <p>Specialist doctors across all dental fields</p>
+      </div>
+      <div class="achieve-item">
+        <strong>4.9★</strong>
+        <p>Average Google rating from 800+ reviews</p>
+      </div>
+      <div class="achieve-item">
+        <strong>5,000+</strong>
+        <p>Root canal treatments successfully completed</p>
+      </div>
+      <div class="achieve-item">
+        <strong>2,000+</strong>
+        <p>Dental implants placed with 98% success</p>
+      </div>
+      <div class="achieve-item">
+        <strong>500+</strong>
+        <p>Complete smile makeovers delivered</p>
+      </div>
+      <div class="achieve-item">
+        <strong>3</strong>
+        <p>National awards for dental excellence</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Experience the Sharma Dental Difference</h2>
+    <p>Join 15,000+ satisfied patients who trust us with their smiles. Book your free first consultation today.</p>
+    <div class="cta-btns">
+      <a href="appointment.html" class="btn btn-white">📅 Book Free Consultation</a>
+      <a href="contact.html" class="btn btn-outline">📍 Visit Us Today</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo"><div class="logo-icon">🦷</div><div class="logo-text"><strong style="color:#fff;">Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div></div>
+        <p>Providing exceptional dental care in Mumbai since 2006.</p>
+        <div class="footer-social"><a href="#">f</a><a href="#">in</a><a href="#">▶</a><a href="#">W</a></div>
+      </div>
+      <div><h4>Quick Links</h4><div class="footer-links"><a href="about.html">About Us</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="appointment.html">Book Appointment</a></div></div>
+      <div><h4>Services</h4><div class="footer-links"><a href="services.html">Teeth Cleaning</a><a href="services.html">Root Canal</a><a href="services.html">Dental Implants</a><a href="services.html">Braces</a><a href="services.html">Whitening</a><a href="services.html">Smile Makeover</a></div></div>
+      <div><h4>Contact</h4><ul class="footer-contact"><li><span>📍</span><span>Shop 12, Versova Road, Andheri West, Mumbai — 400053</span></li><li><span>📞</span><span>+91 98200 12345</span></li><li><span>✉️</span><span>info@sharmadental.in</span></li><li><span>🕐</span><span>Mon–Sat: 9 AM–8 PM | Sun: 10 AM–2 PM</span></li></ul></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2025 Sharma Dental Care. All Rights Reserved.</span><span>Designed & Developed by <a href="#">Besto Solutions</a></span></div>
+</footer>
+<script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}</script>
+</body>
+</html>

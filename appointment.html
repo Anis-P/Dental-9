@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Book Appointment | Sharma Dental Care Mumbai</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .appt-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:60px; align-items:start; }
+    .appt-form-card { background:#fff; border-radius:20px; border:1px solid var(--border); padding:44px; box-shadow:var(--shadow); }
+    .appt-sidebar { display:flex; flex-direction:column; gap:24px; }
+    .sidebar-card { background:#fff; border-radius:var(--radius); border:1px solid var(--border); padding:28px; }
+    .sidebar-card h4 { color:var(--navy); margin-bottom:16px; font-size:1rem; }
+    .hours-list { display:flex; flex-direction:column; gap:10px; }
+    .hours-item { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border); font-size:.88rem; }
+    .hours-item:last-child { border:none; }
+    .hours-item .day { color:var(--navy); font-weight:500; }
+    .hours-item .time { color:var(--gray); }
+    .open-now { color:#4CAF50; font-weight:600; font-size:.75rem; }
+    .contact-list li { display:flex; gap:12px; align-items:flex-start; padding:10px 0; border-bottom:1px solid var(--border); font-size:.9rem; color:var(--gray); }
+    .contact-list li:last-child { border:none; }
+    .contact-list li strong { color:var(--navy); display:block; font-size:.8rem; margin-bottom:2px; }
+    @media(max-width:900px){ .appt-grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="notice-bar">📞 Call <a href="tel:+919820012345">+91 98200 12345</a><span>|</span>🦷 First Consultation is FREE!</div>
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🦷</div><div class="logo-text"><strong>Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a></div>
+    <a href="appointment.html" class="btn btn-primary nav-cta">Book Appointment</a>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a><a href="appointment.html" class="btn btn-primary" style="margin-top:12px;text-align:center;">Book Appointment</a></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">Book Appointment</span></div>
+    <h1>Book Your Appointment</h1>
+    <p>Schedule your visit in just a few clicks. Your first consultation is completely FREE.</p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container appt-grid">
+    <div class="appt-form-card">
+      <span class="sec-label">Online Booking</span>
+      <h2 class="sec-title" style="margin-bottom:8px;">Fill in Your <span>Details</span></h2>
+      <p style="margin-bottom:32px;">We'll confirm your appointment within 2 hours via call or WhatsApp.</p>
+
+      <form id="appointmentForm" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" placeholder="e.g. Rohan Mehta" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" placeholder="+91 98XXX XXXXX" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="yourname@email.com" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Select Service *</label>
+            <select required>
+              <option value="">-- Choose a Service --</option>
+              <option>Teeth Cleaning (Scaling & Polishing)</option>
+              <option>Root Canal Treatment</option>
+              <option>Dental Implants</option>
+              <option>Braces & Aligners (Invisalign)</option>
+              <option>Teeth Whitening</option>
+              <option>Smile Makeover</option>
+              <option>Tooth Extraction</option>
+              <option>Dental Crown or Bridge</option>
+              <option>Gum Treatment</option>
+              <option>Children's Dentistry</option>
+              <option>General Checkup / Consultation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferred Doctor</label>
+            <select>
+              <option value="">-- Any Available Doctor --</option>
+              <option>Dr. Rahul Sharma (Oral Surgery)</option>
+              <option>Dr. Priya Mehta (Orthodontics & Cosmetic)</option>
+              <option>Dr. Amit Verma (Root Canal)</option>
+              <option>Dr. Sneha Joshi (Gum Treatment)</option>
+              <option>Dr. Vikram Nair (Crowns & Prosthodontics)</option>
+              <option>Dr. Kavita Iyer (Children)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date *</label>
+            <input type="date" required min="" id="dateInput" />
+          </div>
+          <div class="form-group">
+            <label>Preferred Time *</label>
+            <select required>
+              <option value="">-- Select Time Slot --</option>
+              <option>9:00 AM – 10:00 AM</option>
+              <option>10:00 AM – 11:00 AM</option>
+              <option>11:00 AM – 12:00 PM</option>
+              <option>12:00 PM – 1:00 PM</option>
+              <option>2:00 PM – 3:00 PM</option>
+              <option>3:00 PM – 4:00 PM</option>
+              <option>4:00 PM – 5:00 PM</option>
+              <option>5:00 PM – 6:00 PM</option>
+              <option>6:00 PM – 7:00 PM</option>
+              <option>7:00 PM – 8:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Additional Message / Medical History</label>
+          <textarea placeholder="Describe your dental concern, mention any medications you take, or share any relevant medical history..."></textarea>
+        </div>
+        <div style="background:var(--light);border-radius:10px;padding:16px;margin-bottom:24px;font-size:.88rem;color:var(--gray);">
+          ✅ <strong>Your first consultation is FREE</strong> — No hidden charges. We'll call you within 2 hours to confirm your slot.<br>
+          💳 <strong>EMI Available</strong> — No-cost EMI on dental implants, braces, and smile makeovers.
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:1rem;">
+          📅 Book My Appointment
+        </button>
+      </form>
+      <div class="success-msg" id="successMsg">
+        <span style="font-size:1.5rem;">🎉</span>
+        <div>
+          <strong>Appointment Request Received!</strong><br>
+          Thank you! Our team will call you within 2 hours to confirm your appointment. You'll also receive a WhatsApp confirmation.
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="appt-sidebar">
+      <div class="sidebar-card">
+        <h4>🕐 Working Hours</h4>
+        <div class="hours-list">
+          <div class="hours-item"><span class="day">Monday</span><span class="time">9:00 AM – 8:00 PM</span></div>
+          <div class="hours-item"><span class="day">Tuesday</span><span class="time">9:00 AM – 8:00 PM</span></div>
+          <div class="hours-item"><span class="day">Wednesday</span><span class="time">9:00 AM – 8:00 PM</span></div>
+          <div class="hours-item"><span class="day">Thursday</span><span class="time">9:00 AM – 8:00 PM</span></div>
+          <div class="hours-item"><span class="day">Friday</span><span class="time">9:00 AM – 8:00 PM</span></div>
+          <div class="hours-item"><span class="day">Saturday</span><span class="time">9:00 AM – 6:00 PM</span></div>
+          <div class="hours-item"><span class="day">Sunday</span><span class="time">10:00 AM – 2:00 PM</span></div>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h4>📞 Contact Us Directly</h4>
+        <ul class="contact-list">
+          <li><span>📞</span><div><strong>Main Clinic</strong>+91 98200 12345</div></li>
+          <li><span>💬</span><div><strong>WhatsApp</strong>+91 98200 12345</div></li>
+          <li><span>✉️</span><div><strong>Email</strong>info@sharmadental.in</div></li>
+          <li><span>📍</span><div><strong>Address</strong>Shop 12, Versova Road, Andheri West, Mumbai – 400053</div></li>
+        </ul>
+      </div>
+      <div class="sidebar-card" style="background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;">
+        <h4 style="color:#fff;">🚨 Dental Emergency?</h4>
+        <p style="color:rgba(255,255,255,.8);font-size:.9rem;margin-bottom:18px;">If you're experiencing severe toothache, swelling, or dental trauma — call us immediately. We offer same-day emergency appointments.</p>
+        <a href="tel:+919820012345" class="btn btn-white" style="width:100%;justify-content:center;">📞 Emergency: +91 98200 12345</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo"><div class="logo-icon">🦷</div><div class="logo-text"><strong style="color:#fff;">Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div></div><p>Providing exceptional dental care in Mumbai since 2006.</p><div class="footer-social"><a>f</a><a>in</a><a>▶</a><a>W</a></div></div>
+      <div><h4>Quick Links</h4><div class="footer-links"><a href="about.html">About Us</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="appointment.html">Book Appointment</a></div></div>
+      <div><h4>Services</h4><div class="footer-links"><a href="services.html">Teeth Cleaning</a><a href="services.html">Root Canal</a><a href="services.html">Implants</a><a href="services.html">Braces</a><a href="services.html">Whitening</a><a href="services.html">Smile Makeover</a></div></div>
+      <div><h4>Contact</h4><ul class="footer-contact"><li><span>📍</span><span>Shop 12, Versova Road, Andheri West, Mumbai</span></li><li><span>📞</span><span>+91 98200 12345</span></li><li><span>✉️</span><span>info@sharmadental.in</span></li><li><span>🕐</span><span>Mon–Sat: 9 AM–8 PM</span></li></ul></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2025 Sharma Dental Care.</span><span>Designed & Developed by <a href="#">Besto Solutions</a></span></div>
+</footer>
+
+<script>
+// Set minimum date to today
+const d = new Date();
+const y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,'0'), day = String(d.getDate()).padStart(2,'0');
+document.getElementById('dateInput').min = `${y}-${m}-${day}`;
+
+function submitForm(e){
+  e.preventDefault();
+  document.getElementById('appointmentForm').style.display = 'none';
+  document.getElementById('successMsg').classList.add('show');
+  window.scrollTo({top: document.getElementById('successMsg').offsetTop - 100, behavior:'smooth'});
+}
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+</body>
+</html>

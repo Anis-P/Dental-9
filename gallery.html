@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Gallery | Sharma Dental Care Mumbai</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-tabs { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:44px; }
+    .gallery-tab { padding:10px 24px; border-radius:50px; border:2px solid var(--border); background:#fff; font-weight:600; font-size:.9rem; color:var(--gray); cursor:pointer; transition:var(--trans); }
+    .gallery-tab.active, .gallery-tab:hover { border-color:var(--blue); background:var(--blue); color:#fff; }
+    .gallery-masonry { columns: 3; column-gap: 20px; }
+    .gallery-masonry-item { break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius); overflow: hidden; position: relative; cursor: pointer; }
+    .gallery-masonry-item img { width:100%; display:block; transition: transform .5s ease; }
+    .gallery-masonry-item:hover img { transform: scale(1.04); }
+    .gallery-masonry-item .overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to top,rgba(11,36,71,.65),transparent);
+      opacity:0; transition:var(--trans);
+      display:flex; align-items:flex-end; padding:18px;
+    }
+    .gallery-masonry-item:hover .overlay { opacity:1; }
+    .overlay span { color:#fff; font-weight:600; font-size:.9rem; }
+    /* Lightbox */
+    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:9999; align-items:center; justify-content:center; }
+    .lightbox.active { display:flex; }
+    .lightbox img { max-width:90vw; max-height:90vh; border-radius:12px; object-fit:contain; }
+    .lightbox-close { position:absolute; top:20px; right:28px; color:#fff; font-size:2.5rem; cursor:pointer; line-height:1; }
+    .lightbox-close:hover { color:var(--accent); }
+    @media(max-width:768px){ .gallery-masonry{ columns:2; } }
+    @media(max-width:480px){ .gallery-masonry{ columns:1; } }
+  </style>
+</head>
+<body>
+<div class="notice-bar">📞 Call <a href="tel:+919820012345">+91 98200 12345</a><span>|</span>🦷 <a href="appointment.html">Book Free Consultation</a></div>
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🦷</div><div class="logo-text"><strong>Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html" class="active">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a></div>
+    <a href="appointment.html" class="btn btn-primary nav-cta">Book Appointment</a>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a><a href="appointment.html" class="btn btn-primary" style="margin-top:12px;text-align:center;">Book Appointment</a></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">Gallery</span></div>
+    <h1>Our Clinic Gallery</h1>
+    <p>Take a virtual tour of our state-of-the-art facility, meet our team, and see our patient results.</p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="gallery-tabs">
+      <div class="gallery-tab active" onclick="filterGallery('all', this)">All Photos</div>
+      <div class="gallery-tab" onclick="filterGallery('clinic', this)">Clinic Interior</div>
+      <div class="gallery-tab" onclick="filterGallery('team', this)">Our Team</div>
+      <div class="gallery-tab" onclick="filterGallery('treatment', this)">Treatments</div>
+      <div class="gallery-tab" onclick="filterGallery('patients', this)">Patient Care</div>
+    </div>
+
+    <div class="gallery-masonry" id="galleryGrid">
+      <div class="gallery-masonry-item" data-cat="team" onclick="openLightbox(this)">
+        <img src="male-working-as-paediatrician.jpg" alt="Expert Medical Team" />
+        <div class="overlay"><span>Our Expert Team</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="patients" onclick="openLightbox(this)">
+        <img src="Female_doctor_talking_with_a_senior_patient_and_.jpeg" alt="Doctor with Patient" />
+        <div class="overlay"><span>Compassionate Patient Care</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="team" onclick="openLightbox(this)">
+        <img src="pexels-oys-photography-838143052-19438561.jpg" alt="Dr. Rahul Sharma" />
+        <div class="overlay"><span>Dr. Rahul Sharma</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="clinic" onclick="openLightbox(this)">
+        <img src="pexels-sagar-tiwari-988598841-27298085.jpg" alt="Modern Clinic" />
+        <div class="overlay"><span>Modern Clinic Environment</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="treatment" onclick="openLightbox(this)">
+        <img src="pexels-oys-photography-838143052-19438559.jpg" alt="Treatment Room" />
+        <div class="overlay"><span>Advanced Treatment Room</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="team" onclick="openLightbox(this)">
+        <img src="pexels-oys-photography-838143052-19438563.jpg" alt="Specialist Doctor" />
+        <div class="overlay"><span>Specialist Consultation</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="patients" onclick="openLightbox(this)">
+        <img src="portrait-mature-therapist-sitting-table-looking-camera.jpg" alt="Patient Consultation" />
+        <div class="overlay"><span>Detailed Consultation</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="team" onclick="openLightbox(this)">
+        <img src="Male_indian_doctor_confident_smiling_person_.jpeg" alt="Confident Doctor" />
+        <div class="overlay"><span>Specialist Doctor</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="treatment" onclick="openLightbox(this)">
+        <img src="pexels-usman-yousaf-708951-6762862.jpg" alt="Endodontist" />
+        <div class="overlay"><span>Endodontic Specialist</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="team" onclick="openLightbox(this)">
+        <img src="Indian_doctor_stock_photo__Image_of_happy__portrait__clipboard_-_22132672.jpeg" alt="Dr. with Clipboard" />
+        <div class="overlay"><span>Treatment Planning</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="clinic" onclick="openLightbox(this)">
+        <img src="Welcome_to_Team_Clover_-_Dr__Sushant_Shetty_Dr_.jpeg" alt="Clinic Team" />
+        <div class="overlay"><span>Our Dental Team</span></div>
+      </div>
+      <div class="gallery-masonry-item" data-cat="patients" onclick="openLightbox(this)">
+        <img src="image_-_2026-05-01T014116_811.png" alt="Patient Care" />
+        <div class="overlay"><span>Dedicated Patient Care</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightboxImg" src="" alt="" />
+</div>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Visit Us in Person</h2>
+    <p>See our state-of-the-art facility for yourself. Book a consultation and tour our clinic.</p>
+    <div class="cta-btns"><a href="appointment.html" class="btn btn-white">📅 Book Appointment</a><a href="contact.html" class="btn btn-outline">📍 Get Directions</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo"><div class="logo-icon">🦷</div><div class="logo-text"><strong style="color:#fff;">Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div></div><p>Providing exceptional dental care in Mumbai since 2006.</p><div class="footer-social"><a>f</a><a>in</a><a>▶</a><a>W</a></div></div>
+      <div><h4>Quick Links</h4><div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="appointment.html">Book</a></div></div>
+      <div><h4>Services</h4><div class="footer-links"><a href="services.html">Cleaning</a><a href="services.html">Root Canal</a><a href="services.html">Implants</a><a href="services.html">Braces</a><a href="services.html">Whitening</a><a href="services.html">Smile Makeover</a></div></div>
+      <div><h4>Contact</h4><ul class="footer-contact"><li><span>📍</span><span>Shop 12, Versova Road, Andheri West</span></li><li><span>📞</span><span>+91 98200 12345</span></li><li><span>✉️</span><span>info@sharmadental.in</span></li></ul></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2025 Sharma Dental Care.</span><span>Designed & Developed by <a href="#">Besto Solutions</a></span></div>
+</footer>
+
+<script>
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+function openLightbox(el){
+  const img = el.querySelector('img');
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightboxImg').alt = img.alt;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox(){ document.getElementById('lightbox').classList.remove('active'); }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+function filterGallery(cat, btn){
+  document.querySelectorAll('.gallery-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gallery-masonry-item').forEach(item=>{
+    if(cat==='all' || item.dataset.cat===cat){
+      item.style.display='block';
+    } else {
+      item.style.display='none';
+    }
+  });
+}
+</script>
+</body>
+</html>

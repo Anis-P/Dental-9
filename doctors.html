@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Our Doctors | Sharma Dental Care Mumbai</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .doctors-full-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
+    .doc-full-card { background:#fff; border-radius:var(--radius); border:1px solid var(--border); overflow:hidden; transition:var(--trans); }
+    .doc-full-card:hover { box-shadow:var(--shadow); transform:translateY(-6px); }
+    .doc-full-img { height:340px; overflow:hidden; }
+    .doc-full-img img { width:100%; height:100%; object-fit:cover; object-position:top center; transition:transform .5s ease; }
+    .doc-full-card:hover .doc-full-img img { transform:scale(1.05); }
+    .doc-full-info { padding:28px; }
+    .doc-full-info h3 { color:var(--navy); font-size:1.3rem; margin-bottom:4px; }
+    .doc-full-info .spec { color:var(--accent); font-weight:600; font-size:.85rem; margin-bottom:6px; }
+    .doc-full-info .qual { color:var(--blue); font-size:.82rem; font-weight:600; margin-bottom:14px; padding:4px 12px; background:var(--light); border-radius:50px; display:inline-block; }
+    .doc-full-info .exp-badge { background:var(--navy); color:#fff; padding:4px 12px; border-radius:50px; font-size:.78rem; font-weight:600; display:inline-block; margin-left:6px; }
+    .doc-full-info p { font-size:.9rem; margin-bottom:18px; }
+    .doc-tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .doc-tags span { background:var(--light); color:var(--blue); padding:4px 10px; border-radius:50px; font-size:.75rem; font-weight:500; }
+    @media(max-width:992px){ .doctors-full-grid{ grid-template-columns:1fr 1fr; } }
+    @media(max-width:600px){ .doctors-full-grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="notice-bar">📞 Call <a href="tel:+919820012345">+91 98200 12345</a><span>|</span>🦷 <a href="appointment.html">Book Free Consultation</a></div>
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🦷</div><div class="logo-text"><strong>Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html" class="active">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a></div>
+    <a href="appointment.html" class="btn btn-primary nav-cta">Book Appointment</a>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a><a href="appointment.html" class="btn btn-primary" style="margin-top:12px;text-align:center;">Book Appointment</a></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">Our Doctors</span></div>
+    <h1>Meet Our Expert Team</h1>
+    <p>Highly qualified specialists with decades of combined experience, dedicated to your dental health.</p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:50px;">
+      <span class="sec-label">Our Medical Team</span>
+      <h2 class="sec-title">Specialists You Can <span>Trust</span></h2>
+      <p class="sec-sub">Every doctor at Sharma Dental Care is not only highly qualified but also deeply committed to providing care with empathy, patience, and precision.</p>
+    </div>
+    <div class="doctors-full-grid">
+
+      <!-- DR. RAHUL SHARMA -->
+      <div class="doc-full-card">
+        <div class="doc-full-img"><img src="pexels-oys-photography-838143052-19438561.jpg" alt="Dr. Rahul Sharma" /></div>
+        <div class="doc-full-info">
+          <span class="doc-badge">Founder & Chief Dentist</span>
+          <h3>Dr. Rahul Sharma</h3>
+          <div class="spec">Oral & Maxillofacial Surgeon</div>
+          <div>
+            <span class="qual">BDS, MDS (Oral Surgery)</span>
+            <span class="exp-badge">18 Yrs Exp.</span>
+          </div>
+          <p>Dr. Rahul Sharma is the founder of Sharma Dental Care and one of Mumbai's most respected oral surgeons. Trained at the prestigious KEM Hospital, Mumbai, he completed his MDS with honours and subsequently underwent advanced implantology training in South Korea and Germany. Dr. Sharma has performed over 2,000 dental implants, hundreds of complex extractions, and numerous jaw surgeries. He is known for his calm demeanour and his ability to explain complex procedures in simple terms, making patients feel completely at ease.</p>
+          <div class="doc-tags">
+            <span>Dental Implants</span><span>Oral Surgery</span><span>Full Mouth Rehab</span><span>Extractions</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DR. SAURAV MEHTA -->
+      <div class="doc-full-card">
+        <div class="doc-full-img"><img src="Indian_doctor_stock_photo__Image_of_happy__portrait__clipboard_-_22132672.jpeg" alt="Dr. Saurav Mehta" /></div>
+        <div class="doc-full-info">
+          <span class="doc-badge">Cosmetic Specialist</span>
+          <h3>Dr. Saurav Mehta</h3>
+          <div class="spec">Orthodontist & Cosmetic Dentist</div>
+          <div>
+            <span class="qual">BDS, MDS (Orthodontics)</span>
+            <span class="exp-badge">12 Yrs Exp.</span>
+          </div>
+          <p>Dr. Saurav Mehta is our star orthodontist and cosmetic dental specialist. After completing his MDS in Orthodontics from Nair Hospital Dental College, Mumbai, he pursued a Fellowship in Cosmetic Dentistry from the American Academy of Cosmetic Dentistry in the USA. With over 1,500 orthodontic cases treated and hundreds of smile makeovers delivered, Dr. Mehta is known for combining clinical precision with an artist's eye for aesthetics. He is a certified Invisalign provider and a specialist in digital smile design.</p>
+          <div class="doc-tags">
+            <span>Invisalign</span><span>Smile Makeover</span><span>Veneers</span><span>Orthodontics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DR. AMIT VERMA -->
+      <div class="doc-full-card">
+        <div class="doc-full-img"><img src="pexels-usman-yousaf-708951-6762862.jpg" alt="Dr. Amit Verma" /></div>
+        <div class="doc-full-info">
+          <span class="doc-badge">Endodontist</span>
+          <h3>Dr. Amit Verma</h3>
+          <div class="spec">Specialist Endodontist</div>
+          <div>
+            <span class="qual">BDS, MDS (Endodontics)</span>
+            <span class="exp-badge">10 Yrs Exp.</span>
+          </div>
+          <p>Dr. Amit Verma is our specialist endodontist with a reputation for performing virtually painless root canal treatments. Trained at the Government Dental College & Hospital, Mumbai, Dr. Verma uses the latest rotary endodontic systems and operates under dental loupes with magnification for unmatched precision. He has successfully completed over 5,000 root canal treatments with a 99% success rate. His methodical approach and gentle technique have converted countless dental-phobic patients into loyal advocates for the clinic.</p>
+          <div class="doc-tags">
+            <span>Root Canal</span><span>Re-treatment RCT</span><span>Pain Management</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DR. SNEHA JOSHI -->
+      <div class="doc-full-card">
+        <div class="doc-full-img"><img src="pexels-oys-photography-838143052-19438559.jpg" alt="Dr. Sneha Joshi" /></div>
+        <div class="doc-full-info">
+          <span class="doc-badge">Periodontist</span>
+          <h3>Dr. Sneha Joshi</h3>
+          <div class="spec">Gum Disease & Periodontist</div>
+          <div>
+            <span class="qual">BDS, MDS (Periodontics)</span>
+            <span class="exp-badge">9 Yrs Exp.</span>
+          </div>
+          <p>Dr. Sneha Joshi is our specialist in gum diseases and periodontal surgery. She completed her post-graduation in Periodontics from the prestigious Manipal College of Dental Sciences and has since become one of the most sought-after periodontists in western Mumbai. Dr. Joshi is proficient in laser gum surgery, gum grafting, and the non-surgical management of advanced periodontitis. Her patients appreciate her thorough approach to gum health and her ability to reverse early stages of gum disease with non-surgical techniques.</p>
+          <div class="doc-tags">
+            <span>Gum Treatment</span><span>Laser Surgery</span><span>Gum Grafting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DR. VIKRAM NAIR -->
+      <div class="doc-full-card">
+        <div class="doc-full-img"><img src="pexels-oys-photography-838143052-19438563.jpg" alt="Dr. Vikram Nair" /></div>
+        <div class="doc-full-info">
+          <span class="doc-badge">Prosthodontist</span>
+          <h3>Dr. Vikram Nair</h3>
+          <div class="spec">Crowns, Bridges & Prosthetics</div>
+          <div>
+            <span class="qual">BDS, MDS (Prosthodontics)</span>
+            <span class="exp-badge">11 Yrs Exp.</span>
+          </div>
+          <p>Dr. Vikram Nair is our prosthodontics specialist, responsible for restoring and replacing teeth with crowns, bridges, dentures, and implant-supported restorations. A graduate from Sinhgad Dental College, Pune, Dr. Nair works with our in-house CAD/CAM technology to fabricate same-day ceramic crowns that fit with extraordinary precision. His meticulous attention to detail ensures that every crown, bridge, and veneer he creates blends seamlessly with the patient's natural teeth in both form and function.</p>
+          <div class="doc-tags">
+            <span>Crowns & Bridges</span><span>Dentures</span><span>CAD/CAM</span><span>Veneers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DR. KAVITA IYER -->
+      <div class="doc-full-card">
+        <div class="doc-full-img"><img src="portrait-mature-therapist-sitting-table-looking-camera.jpg" alt="Dr. Kavita Iyer" /></div>
+        <div class="doc-full-info">
+          <span class="doc-badge">Paediatric Dentist</span>
+          <h3>Dr. Kavita Iyer</h3>
+          <div class="spec">Children's Dental Specialist</div>
+          <div>
+            <span class="qual">BDS, MDS (Paedodontics)</span>
+            <span class="exp-badge">8 Yrs Exp.</span>
+          </div>
+          <p>Dr. Kavita Iyer is our beloved children's dentist — a specialist who has a remarkable gift for making children feel comfortable and confident during their dental visits. She creates a warm, fun environment where children don't fear the dentist, but actually look forward to their appointments. Dr. Iyer specializes in treating dental anxiety in children, fluoride treatments, space maintainers, and early orthodontic intervention. She is also an advocate for dental education and regularly visits schools in Andheri to teach children about oral hygiene.</p>
+          <div class="doc-tags">
+            <span>Children's Dentistry</span><span>Fluoride Treatment</span><span>Space Maintainers</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section-sm" style="background:var(--light);">
+  <div class="container text-center">
+    <span class="sec-label">Our Credentials</span>
+    <h2 class="sec-title" style="margin-bottom:16px;">Trusted, Certified, <span>Expert</span></h2>
+    <p class="sec-sub">All our doctors are registered with the Maharashtra State Dental Council and hold valid MCI registration. We invest continuously in continuing dental education and international training.</p>
+    <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:40px;">
+      <div style="text-align:center;"><div style="font-size:3rem;margin-bottom:8px;">🏅</div><strong style="color:var(--navy);display:block;">MSDC Registered</strong><span style="color:var(--gray);font-size:.85rem;">All Doctors</span></div>
+      <div style="text-align:center;"><div style="font-size:3rem;margin-bottom:8px;">🎓</div><strong style="color:var(--navy);display:block;">ISO 9001 Certified</strong><span style="color:var(--gray);font-size:.85rem;">Clinic Standards</span></div>
+      <div style="text-align:center;"><div style="font-size:3rem;margin-bottom:8px;">🌍</div><strong style="color:var(--navy);display:block;">International Training</strong><span style="color:var(--gray);font-size:.85rem;">USA, Germany, Korea</span></div>
+      <div style="text-align:center;"><div style="font-size:3rem;margin-bottom:8px;">📚</div><strong style="color:var(--navy);display:block;">Continuous Education</strong><span style="color:var(--gray);font-size:.85rem;">Annual Workshops</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Book an Appointment with Our Specialists</h2>
+    <p>Choose your specialist and book your appointment online in just 60 seconds.</p>
+    <div class="cta-btns"><a href="appointment.html" class="btn btn-white">📅 Book Appointment</a><a href="contact.html" class="btn btn-outline">📞 Call Us</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo"><div class="logo-icon">🦷</div><div class="logo-text"><strong style="color:#fff;">Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div></div><p>Providing exceptional dental care in Mumbai since 2006.</p><div class="footer-social"><a>f</a><a>in</a><a>▶</a><a>W</a></div></div>
+      <div><h4>Quick Links</h4><div class="footer-links"><a href="about.html">About Us</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="appointment.html">Book Appointment</a></div></div>
+      <div><h4>Services</h4><div class="footer-links"><a href="services.html">Teeth Cleaning</a><a href="services.html">Root Canal</a><a href="services.html">Implants</a><a href="services.html">Braces</a><a href="services.html">Whitening</a><a href="services.html">Smile Makeover</a></div></div>
+      <div><h4>Contact</h4><ul class="footer-contact"><li><span>📍</span><span>Shop 12, Versova Road, Andheri West, Mumbai</span></li><li><span>📞</span><span>+91 98200 12345</span></li><li><span>✉️</span><span>info@sharmadental.in</span></li><li><span>🕐</span><span>Mon–Sat: 9 AM–8 PM</span></li></ul></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2025 Sharma Dental Care.</span><span>Designed & Developed by <a href="#">Besto Solutions</a></span></div>
+</footer>
+<script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}</script>
+</body>
+</html>

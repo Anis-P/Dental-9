@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Patient Reviews | Sharma Dental Care Mumbai</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .testi-full-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .testi-full-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:32px; transition:var(--trans); position:relative; }
+    .testi-full-card:hover { box-shadow:var(--shadow); transform:translateY(-4px); }
+    .quote-icon { font-size:3rem; line-height:1; color:var(--light); margin-bottom:14px; font-family:serif; }
+    .rating-bar { display:flex; align-items:center; gap:16px; background:var(--light); border-radius:var(--radius); padding:28px; margin-bottom:40px; }
+    .rating-big { font-family:'Playfair Display',serif; font-size:4rem; color:var(--navy); line-height:1; }
+    .rating-stars { font-size:1.5rem; color:var(--gold); }
+    .rating-info p { color:var(--gray); font-size:.9rem; }
+    .platform-badges { display:flex; gap:12px; margin-top:16px; }
+    .platform-badge { background:#fff; border:1px solid var(--border); border-radius:8px; padding:10px 18px; font-size:.82rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:6px; }
+    @media(max-width:992px){ .testi-full-grid{ grid-template-columns:1fr 1fr; } }
+    @media(max-width:600px){ .testi-full-grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="notice-bar">📞 Call <a href="tel:+919820012345">+91 98200 12345</a><span>|</span>🦷 <a href="appointment.html">Book Free Consultation</a></div>
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🦷</div><div class="logo-text"><strong>Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html" class="active">Reviews</a><a href="contact.html">Contact</a></div>
+    <a href="appointment.html" class="btn btn-primary nav-cta">Book Appointment</a>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a><a href="appointment.html" class="btn btn-primary" style="margin-top:12px;text-align:center;">Book Appointment</a></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">Patient Reviews</span></div>
+    <h1>What Our Patients Say</h1>
+    <p>Real stories, real smiles. Read why 15,000+ patients choose Sharma Dental Care.</p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <!-- RATING SUMMARY -->
+    <div class="rating-bar">
+      <div style="text-align:center;padding-right:24px;border-right:1px solid var(--border);">
+        <div class="rating-big">4.9</div>
+        <div class="rating-stars">★★★★★</div>
+        <div style="font-size:.8rem;color:var(--gray);margin-top:4px;">Average Rating</div>
+      </div>
+      <div style="padding-left:24px;flex:1;">
+        <h3 style="color:var(--navy);margin-bottom:8px;">Trusted by 15,000+ Patients</h3>
+        <p style="margin-bottom:14px;">Sharma Dental Care consistently receives the highest ratings across all major platforms, reflecting our commitment to exceptional patient care.</p>
+        <div class="platform-badges">
+          <div class="platform-badge">🟢 Google: 4.9★ (820 reviews)</div>
+          <div class="platform-badge">📘 Practo: 4.8★ (340 reviews)</div>
+          <div class="platform-badge">⭐ Justdial: 4.9★ (210 reviews)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS GRID -->
+    <div class="testi-full-grid">
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"I had been putting off a root canal for two years because of fear. A friend recommended Dr. Amit Verma and I finally gathered the courage to go. The procedure was completely painless — I literally didn't feel a thing! Dr. Verma was calm, explained everything step by step, and it was over in under an hour. I'm so glad I didn't wait any longer. This clinic has changed my entire perspective on dentistry."</p>
+        <div class="testi-author">
+          <div class="avi">RK</div>
+          <div><strong>Rajesh Kumar</strong><span>Software Engineer, Andheri West</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">Root Canal Treatment • March 2025</div>
+      </div>
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"I got a complete smile makeover done by Dr. Priya Mehta before my wedding. She did 8 porcelain veneers and full-mouth whitening. The transformation is absolutely unbelievable! My wedding photos look like they're from a magazine. Every guest complimented my smile. Dr. Priya listened to exactly what I wanted and delivered something even better. Worth every rupee!"</p>
+        <div class="testi-author">
+          <div class="avi">SP</div>
+          <div><strong>Sunita Patil</strong><span>Teacher, Bandra</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">Smile Makeover (Veneers) • January 2025</div>
+      </div>
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"I lost two teeth in an accident and was using a removable partial denture for 3 years. Finally decided to get dental implants done by Dr. Rahul Sharma. The procedure was smooth, recovery was faster than I expected, and the implants look and feel exactly like my natural teeth. I can eat anything without worry! The entire team was so professional and supportive throughout the 6-month journey."</p>
+        <div class="testi-author">
+          <div class="avi">AM</div>
+          <div><strong>Arjun Mhatre</strong><span>Business Owner, Juhu</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">Dental Implants • December 2024</div>
+      </div>
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"My 8-year-old was terrified of dentists. We took him to Dr. Kavita Iyer and she was absolutely amazing with him! She spent 15 minutes just talking and playing with him before even starting. He actually came out saying he wants to visit the dentist again! She filled two cavities and he didn't cry once. Dr. Kavita is a gem — so patient and wonderful with children."</p>
+        <div class="testi-author">
+          <div class="avi">NR</div>
+          <div><strong>Neha Raut</strong><span>Parent, Malad West</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">Children's Dentistry • February 2025</div>
+      </div>
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"I started Invisalign treatment with Dr. Priya Mehta 18 months ago. My teeth were quite crooked and I was embarrassed to smile. Today, I have perfectly straight teeth and I can't stop smiling! The Invisalign process was so comfortable — nobody even noticed I was wearing aligners. Dr. Priya checked in regularly and the results exceeded my expectations. Best investment in myself!"</p>
+        <div class="testi-author">
+          <div class="avi">PD</div>
+          <div><strong>Pooja Desai</strong><span>HR Manager, Powai</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">Invisalign Treatment • April 2025</div>
+      </div>
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"I had severe gum disease and was told by another clinic that I needed major surgery. Dr. Sneha Joshi at Sharma Dental Care assessed me thoroughly and treated me with laser gum therapy — no surgery needed! Within 3 months, my gums were healthy again. Her knowledge and the non-surgical approach saved me from a lot of pain and expense. I'm now on a regular maintenance schedule and my gums are in perfect health."</p>
+        <div class="testi-author">
+          <div class="avi">VN</div>
+          <div><strong>Vijay Naik</strong><span>Retired Officer, Versova</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">Laser Gum Treatment • November 2024</div>
+      </div>
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"I've been coming to Sharma Dental Care for my routine cleaning every 6 months for 4 years now. The hygiene standards are immaculate — I've never seen a clinic this clean. The staff are warm and professional, waiting time is minimal, and the quality of care is consistently excellent. I've recommended this clinic to my entire family and all my colleagues. It's our family's dental home!"</p>
+        <div class="testi-author">
+          <div class="avi">MS</div>
+          <div><strong>Meena Shah</strong><span>Bank Manager, Lokhandwala</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">Regular Patient Since 2021</div>
+      </div>
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"I needed 4 teeth extracted and multiple crowns placed. Dr. Vikram Nair managed my case with incredible precision. The same-day CAD/CAM crowns were a revelation — no temporary crowns, no second visit! Each crown fits perfectly and looks completely natural. The digital impression technology they use is so much more comfortable than the old messy putty molds. Highly recommend this clinic for any restorative work."</p>
+        <div class="testi-author">
+          <div class="avi">AK</div>
+          <div><strong>Ashish Kulkarni</strong><span>Architect, Goregaon</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">Crowns & Prosthodontics • October 2024</div>
+      </div>
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"The Zoom whitening treatment was incredible! My teeth were stained from years of chai and coffee. After just one 60-minute session, my teeth were 7 shades lighter. The dentist was very careful and applied gum protection throughout the procedure — zero sensitivity afterwards! The result was natural-looking, not artificially white. I felt like a new person walking out. Absolutely worth every rupee!"</p>
+        <div class="testi-author">
+          <div class="avi">KP</div>
+          <div><strong>Kavya Pillai</strong><span>Actress & Model, Bandra</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">Zoom Teeth Whitening • March 2025</div>
+      </div>
+
+      <div class="testi-full-card">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;">"As someone who travels for work, I needed a dentist I could truly trust. Sharma Dental Care ticks every box — honest treatment advice, no unnecessary procedures suggested, transparent pricing, and genuine care. Dr. Rahul explained my treatment options clearly with pros, cons, and costs for each — and let me decide without any pressure. That kind of integrity is rare. This will be my dental clinic for life."</p>
+        <div class="testi-author">
+          <div class="avi">RT</div>
+          <div><strong>Rohit Tawde</strong><span>Sales Director, Andheri East</span></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--gray);">General Consultation & Treatment • February 2025</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to Join 15,000+ Happy Patients?</h2>
+    <p>Book your free first consultation and experience the Sharma Dental Care difference today.</p>
+    <div class="cta-btns"><a href="appointment.html" class="btn btn-white">📅 Book Free Consultation</a><a href="contact.html" class="btn btn-outline">📞 Call Us</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo"><div class="logo-icon">🦷</div><div class="logo-text"><strong style="color:#fff;">Sharma Dental Care</strong><span>Mumbai's Trusted Dentist</span></div></div><p>Providing exceptional dental care in Mumbai since 2006.</p><div class="footer-social"><a>f</a><a>in</a><a>▶</a><a>W</a></div></div>
+      <div><h4>Quick Links</h4><div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="doctors.html">Doctors</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="appointment.html">Book</a></div></div>
+      <div><h4>Services</h4><div class="footer-links"><a href="services.html">Cleaning</a><a href="services.html">Root Canal</a><a href="services.html">Implants</a><a href="services.html">Braces</a><a href="services.html">Whitening</a><a href="services.html">Smile Makeover</a></div></div>
+      <div><h4>Contact</h4><ul class="footer-contact"><li><span>📍</span><span>Shop 12, Versova Road, Andheri West</span></li><li><span>📞</span><span>+91 98200 12345</span></li><li><span>✉️</span><span>info@sharmadental.in</span></li></ul></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2025 Sharma Dental Care.</span><span>Designed & Developed by <a href="#">Besto Solutions</a></span></div>
+</footer>
+<script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}</script>
+</body>
+</html>
